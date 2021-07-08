@@ -1,14 +1,290 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+    <!--importing jquery-->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+
+    <!--importing my css-->
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/index.css'/>
+
+    <!--setting device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<section class="landing-page">
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand" href="/">
+                <svg id="레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 231.3 231.3">
+                    <circle cx="115.65" cy="115.65" r="115.15" style="fill:none;stroke-miterlimit:10"/>
+                    <line x1="36.49" y1="199.27" x2="115.98" y2="0.79" style="fill:none;stroke-miterlimit:10"/>
+                    <line x1="195.29" y1="198.81" x2="115.98" y2="0.79" style="fill:none;stroke-miterlimit:10"/>
+                    <line x1="36.15" y1="198.95" x2="36.15" y2="32.34" style="fill:none;stroke-miterlimit:10"/>
+                    <line x1="195.29" y1="198.81" x2="195.15" y2="32.34" style="fill:none;stroke-miterlimit:10"/>
+                    <line x1="36.63" y1="115.17" x2="195.63" y2="115.16" style="fill:none;stroke-miterlimit:10"/>
+                    <line x1="116.13" y1="230.32" x2="115.65" y2="115.34" style="fill:none;stroke-miterlimit:10"/>
+                    <line x1="36.15" y1="32.34" x2="115.65" y2="115.34" style="fill:none;stroke-miterlimit:10"/>
+                    <line x1="195.15" y1="32.34" x2="115.65" y2="115.34" style="fill:none;stroke-miterlimit:10"/>
+                </svg>
+            </div>
+            <div class="navText-container">
+                <a href="/contact" class="navText navTextEnd">CONTACT</a>
+                <a href="/projects" class="navText navTextMiddle">PROJECTS</a>
+                <a href="#Timeline" class="navText navTextMiddle">TIMELINE</a>
+                <a href="#About" class="navText navTextMiddle">ABOUT</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="start-page">
+        <div class="container not-full-container">
+            <div class="entireText">
+                <div class="entireText-inner">
+                    <div class="hello">
+                        <div class="hello-inner>"><h1>HELLO</h1></div>
+                    </div>
+                    <div class="myName">
+                        <div class="myName-inner>"><h1>MY NAME IS</h1></div>
+                    </div>
+                    <div class="yooha">
+                        <div class="yooha-inner>"><h1>YOOHA</h1></div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile">
+                <img src="images/profile.png">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="about-page" id="About">
+    <div class="container full-container">
+        <div class="aboutText">
+            <h2>ABOUT ME</h2>
+        </div>
+        <div class="skills">
+            <div class="bar cf">
+                <div class="bar-inside1" data-percent="90%" style="width: 90%">
+                    <span class="label body2">Java</span>
+                </div>
+                <span class="percentage body2">90%</span>
+            </div>
+            <div class="bar cf">
+                <div class="bar-inside2" data-percent="90%" style="width: 80%">
+                    <span class="label body2">Html/Css/Javascript</span>
+                </div>
+                <span class="percentage body2">90%</span>
+            </div>
+            <div class="bar cf">
+                <div class="bar-inside3" data-percent="90%" style="width: 80%">
+                    <span class="label body2">Figma</span>
+                </div>
+                <span class="percentage body2">90%</span>
+            </div>
+            <div class="bar cf">
+                <div class="bar-inside4" data-percent="60%" style="width: 60%">
+                    <span class="label body2">Python</span>
+                </div>
+                <div class="percentage body2">60%</div>
+            </div>
+            <div class="bar cf">
+                <div class="bar-inside5" data-percent="35%" style="width: 35%">
+                    <span class="label body2">MySql</span>
+                </div>
+                <span class="percentage body2">35%</span>
+            </div>
+            <div class="bar cf">
+                <div class="bar-inside6" data-percent="20%" style="width: 20%">
+                    <span class="label body2">C</span>
+                </div>
+                <span class="percentage body2">20%</span>
+            </div>
+        </div>
+        <div class="aboutContent body1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus nec sed placerat lobortis. Netus lacus,
+            lacus erat at at. Quis mus ridiculus pharetra magnis sed euismod amet, elementum ut.
+            <br><br>
+            Elementum volutpat pulvinar enim congue mattis turpis pharetra leo sed. Fermentum amet, quis malesuada quis.
+            Libero ut eget arcu scelerisque morbi viverra consectetur.
+            <br><br>
+            Elementum volutpat pulvinar enim congue mattis turpis pharetra leo sed. Fermentum amet, quis malesuada quis.
+        </div>
+
+    </div>
+</section>
+
+<section class="timeline-page" id="Timeline">
+    <div class="container timeline-container">
+        <div class="timelineText">
+            <h1>TIMELINE</h1>
+        </div>
+        <div class="line horizontalLine"></div>
+        <div class="line verticalLine"></div>
+        <div class="line line1 largeLine"></div>
+        <div class="line line2 smallLine"></div>
+        <div class="line line3 smallLine"></div>
+        <div class="line line4 largeLine"></div>
+        <div class="line line5 smallLine"></div>
+        <div class="line line6 smallLine"></div>
+        <div class="line line7 smallLine"></div>
+        <div class="line line8 largeLine"></div>
+        <div class="line line9 largeLine"></div>
+        <div class="line line10 smallLine"></div>
+        <div class="line line11 largeLine"></div>
+        <div class="line line12 smallLine"></div>
+        <div class="line line13 smallLine"></div>
+        <div class="line line14 largeLine"></div>
+        <div class="line line15 smallLine"></div>
+        <div class="line line16 smallLine"></div>
+        <div class="line line17 largeLine"></div>
+        <div class="line line18 smallLine"></div>
+        <div class="line line19 largeLine"></div>
+        <div class="line line20 smallLine"></div>
+        <div class="line line21 largeLine"></div>
+        <div class="line horizontalLine2"></div>
+
+        <div class="body1 timeLineContent time1">Entrance to Stonybrook University (2019.02 ~ current)</div>
+        <div class="body1 timeLineContent time2">Club member of CO;Ders (2019.02)</div>
+        <div class="body1 timeLineContent time3">Volunteer work at children’s welfare center (2019.03 ~ 2019.06)</div>
+        <div class="body1 timeLineContent time4">Vice president of CO;Ders (2019.06)</div>
+        <div class="body1 timeLineContent time5">Teaching Assistant of Introduction to Object Oriented Programming
+            (2019.08 ~ 2019.12)
+        </div>
+        <div class="body1 timeLineContent time6">Teaching Assistant of Data Structures (2020.02 ~ 2020.06)</div>
+        <div class="body1 timeLineContent time7">DoUm: a smartphone guide website for seniors (2020.02 ~ 2020.06)</div>
+        <div class="body1 timeLineContent time8">AmHangUhSah: travel application for better experience (2020.06 ~
+            2020.11)
+        </div>
+        <div class="body1 timeLineContent time9">Clean Bottle: Machine learning based PET recycling (2020.08 ~
+            2020.12)
+        </div>
+        <div class="body1 timeLineContent time10">Songdo Living Lab: Making songdo a smart city (2020.09 ~ 2020.11)
+        </div>
+        <div class="body1 timeLineContent time11">Covengers: Covid-19 prevention application (2020.10 ~ 2020.12)</div>
+        <div class="body1 timeLineContent time12">USC Website: UI/UX Team (2020.10 ~ 2020.12)</div>
+        <div class="body1 timeLineContent time13">Covid-19 Testing Website: A website to manage covid-19 test results
+            (2020.11 ~ 2020.12)
+        </div>
+        <div class="body1 timeLineContent time14">Ericsson-LG: Intern in the Network Deployment Team (2021.01 ~
+            2021.02)
+        </div>
+        <div class="body1 timeLineContent time15">SOL: Smart optimization of Luggage (2021.01 ~ 2021.02)</div>
+        <div class="body1 timeLineContent time16">DoranDoran: application to solve apartment noise problems (2021.01 ~
+            2021.02)
+        </div>
+        <div class="body1 timeLineContent time17">Director of CO;Ders Us: Coding Education NGO (2021.02 ~ current)</div>
+        <div class="body1 timeLineContent time18">Schedule Sharer: platform where students can share their calendars
+            (2021.02 ~2021.03)
+        </div>
+        <div class="body1 timeLineContent time19">Tetris: 1st place of Coding Contest in SUNY Korea (2021.06)</div>
+        <div class="body1 timeLineContent time20">TypeForm Clone (2021.06)</div>
+        <div class="body1 timeLineContent time21">My portfolio website (2021.07)</div>
+
+
+    </div>
+</section>
+
+<section class="introduction-page">
+    <div class="container full-container">
+        <div class="introText">
+            <div class="introText-inner">
+                <div class="iama">
+                    <div class="iama-inner>"><h1>I AM A</h1></div>
+                </div>
+                <div class="designer">
+                    <div class="designer-inner>"><h1>DESIGNER</h1></div>
+                </div>
+                <div class="developer">
+                    <div class="developer-inner>"><h1>DEVELOPER</h1></div>
+                </div>
+                <div class="leader">
+                    <div class="leader-inner>"><h1>AND A LEADER</h1></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-end">
+    <div class="container pageEndText-container">
+            <a href="https://linkedin.com/in/yooha-bae-1912b21a3/" target="_blank" class="navText pageEndText">LINKEDIN</a>
+            <a href="https://github.com/YoohaBae" target="_blank" class="navText pageEndText">GITHUB</a>
+            <a href="mailto: yooha.bae.2@gmail.com" target="_blank" class="navText pageEndText">EMAIL</a>
+        </div>
+    </div>
+</section>
+</body>
+<script>
+    $.fn.isInViewport = function () {
+        var position = $(this)[0].getBoundingClientRect();
+
+        // checking whether fully visible
+        if (position.top >= 0 && position.bottom <= window.innerHeight) {
+            return true;
+        }
+        // checking for partial visibility
+        if (position.top < window.innerHeight && position.bottom >= 0) {
+            return true;
+        }
+        return false;
+    };
+    $(window).on('resize scroll', function () {
+        if ($('.aboutText').isInViewport()) {
+            $('.aboutText').delay(500).show("fade", 2000);
+        }
+        if ($('.aboutContent').isInViewport()) {
+            $('.aboutContent').delay(500).show("fade", 2000);
+        }
+        if ($('.skills').isInViewport()) {
+            $('.skills').delay(500).show("fade", 2000);
+        }
+    });
+    $(window).on('resize scroll', function () {
+        if ($('.timelineText').isInViewport()) {
+            $('.timelineText').delay(2000).show(1000);
+        }
+        if ($('.horizontalLine').isInViewport()) {
+            $('.horizontalLine').delay(2000).show("slow");
+            $('.verticalLine').delay(2000).show(3000);
+            $('.horizontalLine2').delay(5000).show("slow");
+        }
+        if ($('.line1').isInViewport()) {
+            for (let i = 1; i < 22; i++) {
+                $('.line' + i).delay(2000).show(1000);
+                $('.time' + i).delay(3000).show(400);
+            }
+        }
+    });
+    $(window).on('resize scroll', function () {
+        if ($('.introText').isInViewport()) {
+            $('.introText').delay(1000).show(500);
+        }
+    });
+
+    $('.designer').on('click', function () {
+        if ($('.designer').css('color') === 'rgb(255, 81, 81)') {
+            document.location.href = '/projects/design';
+        }
+    })
+
+    $('.developer').on('click', function () {
+        if ($('.developer').css('color') === 'rgb(255, 81, 81)') {
+            document.location.href = '/projects/developer';
+        }
+    })
+
+    $('.leader').on('click', function () {
+        if ($('.leader').css('color') === 'rgb(255, 81, 81)') {
+            document.location.href = '/projects/leader';
+        }
+    })
+</script>
 </html>
+

@@ -12,6 +12,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -24,9 +25,20 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yooha\WebstormProjects\YoohaBae.github.io\public\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yooha\WebstormProjects\YoohaBae.github.io\public\stylesheets" />
+      <recent name="C:\Users\yooha\WebstormProjects\YoohaBae.github.io\public\images" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -36,7 +48,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625643744967</updated>
-      <workItem from="1625643746193" duration="2697000" />
+      <workItem from="1625643746193" duration="43821000" />
     </task>
     <servers />
   </component>
@@ -52,5 +64,17 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1421" y="348" key="SettingsEditor/2560.1042.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1625647035068" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1625667681245">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/2560.1042.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1625667681245" />
+    <state x="881" y="310" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1625728930084">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="881" y="310" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/2560.1042.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1625728930084" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1625743852235">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/2560.1042.1536.832/0.0.2560.1400@0.0.2560.1400" timestamp="1625743852235" />
   </component>
 </project>
