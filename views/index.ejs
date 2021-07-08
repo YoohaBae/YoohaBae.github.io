@@ -198,13 +198,13 @@
                     <div class="iama-inner>"><h1>I AM A</h1></div>
                 </div>
                 <div class="designer">
-                    <div id="designer-inner>"><h1>DESIGNER</h1></div>
+                    <div id="designer-inner>"><h1 class="designerText">DESIGNER</h1></div>
                 </div>
                 <div class="developer">
-                    <div class="developer-inner>"><h1>DEVELOPER</h1></div>
+                    <div class="developer-inner>"><h1 class="developerText">DEVELOPER</h1></div>
                 </div>
                 <div class="leader">
-                    <div class="leader-inner>"><h1>AND A LEADER</h1></div>
+                    <div class="leader-inner>"><h1 class="leaderText">AND A LEADER</h1></div>
                 </div>
             </div>
         </div>
@@ -266,45 +266,39 @@
             $('.introText').delay(1000).show(500);
         }
     });
+    $(document).ready(function(){
+        $(".designer").mouseenter(function() {
+            $('.designerText').text('DESIGN PROJECTS');
+        }).mouseleave(function() {
+            $('.designerText').text('DESIGNER');
+        });
+        $(".developer").mouseenter(function() {
+            $('.developerText').text('CODING PROJECTS');
+        }).mouseleave(function() {
+            $('.developerText').text('DEVELOPER');
+        });
+        $(".leader").mouseenter(function() {
+            $('.leaderText').text('LEADING EXPERIENCE');
+        }).mouseleave(function() {
+            $('.leaderText').text('AND A LEADER');
+        });
 
-    $('.designer').hover(function(){
-        prev = $(this).text();
-        console.log($(this).text());
-        $(this).html("<div class='designer-inner'><h1>DESIGN PROJECTS</h1></div>");
-    }, function(){
-        $(this).text(prev)
-    });
-    $('.developer').hover(function(){
-        prev = $(this).text();
-        console.log($(this).text());
-        $(this).html("<div class='developer-inner'><h1>CODING PROJECTS</h1></div>");
-    }, function(){
-        $(this).text(prev)
-    });
-    $('.leader').hover(function(){
-        prev = $(this).text();
-        console.log($(this).text());
-        $(this).html("<div class='leader-inner'><h1>LEADING EXPERIENCE</h1></div>");
-    }, function(){
-        $(this).text(prev)
-    });
-    $('.designer').on('click', function () {
-        if ($('.designer').css('color') === 'rgb(255, 81, 81)') {
-            document.location.href = '/projects/design';
-        }
-    })
+        $('.designer').on('click', function () {
+            if ($('.designer').css('color') === 'rgb(255, 81, 81)') {
+                document.location.href = '/projects/design';
+            }
+        })
+        $('.developer').on('click', function () {
+            if ($('.developer').css('color') === 'rgb(255, 81, 81)') {
+                document.location.href = '/projects/developer';
+            }
+        })
 
-    $('.developer').on('click', function () {
-        if ($('.developer').css('color') === 'rgb(255, 81, 81)') {
-            document.location.href = '/projects/developer';
-        }
-    })
-
-    $('.leader').on('click', function () {
-        if ($('.leader').css('color') === 'rgb(255, 81, 81)') {
-            document.location.href = '/projects/leader';
-        }
-    })
+        $('.leader').on('click', function () {
+            if ($('.leader').css('color') === 'rgb(255, 81, 81)') {
+                document.location.href = '/projects/leader';
+            }
+        })
+    });
 </script>
 </html>
-
