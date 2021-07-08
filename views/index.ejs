@@ -10,7 +10,6 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
 
 
-
     <!--setting device-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
@@ -199,7 +198,7 @@
                     <div class="iama-inner>"><h1>I AM A</h1></div>
                 </div>
                 <div class="designer">
-                    <div class="designer-inner>"><h1>DESIGNER</h1></div>
+                    <div id="designer-inner>"><h1>DESIGNER</h1></div>
                 </div>
                 <div class="developer">
                     <div class="developer-inner>"><h1>DEVELOPER</h1></div>
@@ -214,10 +213,10 @@
 
 <section class="page-end">
     <div class="container pageEndText-container">
-            <a href="https://linkedin.com/in/yooha-bae-1912b21a3/" target="_blank" class="navText pageEndText">LINKEDIN</a>
-            <a href="https://github.com/YoohaBae" target="_blank" class="navText pageEndText">GITHUB</a>
-            <a href="mailto: yooha.bae.2@gmail.com" target="_blank" class="navText pageEndText">EMAIL</a>
-        </div>
+        <a href="https://linkedin.com/in/yooha-bae-1912b21a3/" target="_blank" class="navText pageEndText">LINKEDIN</a>
+        <a href="https://github.com/YoohaBae" target="_blank" class="navText pageEndText">GITHUB</a>
+        <a href="mailto: yooha.bae.2@gmail.com" target="_blank" class="navText pageEndText">EMAIL</a>
+    </div>
     </div>
 </section>
 </body>
@@ -268,6 +267,27 @@
         }
     });
 
+    $('.designer').hover(function(){
+        prev = $(this).text();
+        console.log($(this).text());
+        $(this).html("<div class='designer-inner'><h1>DESIGN PROJECTS</h1></div>");
+    }, function(){
+        $(this).text(prev)
+    });
+    $('.developer').hover(function(){
+        prev = $(this).text();
+        console.log($(this).text());
+        $(this).html("<div class='developer-inner'><h1>CODING PROJECTS</h1></div>");
+    }, function(){
+        $(this).text(prev)
+    });
+    $('.leader').hover(function(){
+        prev = $(this).text();
+        console.log($(this).text());
+        $(this).html("<div class='leader-inner'><h1>LEADING EXPERIENCE</h1></div>");
+    }, function(){
+        $(this).text(prev)
+    });
     $('.designer').on('click', function () {
         if ($('.designer').css('color') === 'rgb(255, 81, 81)') {
             document.location.href = '/projects/design';
