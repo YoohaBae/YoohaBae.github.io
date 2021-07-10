@@ -5,7 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-
+var projectsRouter = require('./routes/projects');
+var contactRouter = require('./routes/contact');
+var blogRouter = require('./routes/blog');
 var app = express();
 
 // view engine setup
@@ -19,7 +21,11 @@ app.use(cookieParser());
 
 app.use(express.static(__dirname + '/public'));
 app.use('/images', express.static('public'));
+
 app.use('/', indexRouter);
+app.use('/projects', projectsRouter);
+app.use('/contact', projectsRouter);
+app.use('/blog', projectsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -36,7 +42,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
 
 module.exports = app;
