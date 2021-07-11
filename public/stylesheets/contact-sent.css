@@ -1,0 +1,101 @@
+
+.navText:hover {
+    text-decoration: #FF5151 underline;
+    color: #FF5151;
+    transition: 0.3s;
+}
+
+.navbar {
+    background: #AEA096;
+}
+
+.navbar-brand svg {
+    stroke: white;
+}
+
+.navTextMiddle {
+    color: #5A4A3F;
+}
+
+.navTextEnd {
+    color: #5A4A3F;
+}
+
+html {
+    background-color: #5A4A3F;
+}
+
+#navCurrent {
+    color: #FF5151;
+}
+
+.contactText {
+    color: #5A4A3F;
+    text-align: center;
+}
+
+.contact-info {
+    color: #5A4A3F;
+    width: 40%;
+    height: 460px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    margin-right: 5%
+}
+
+h3 {
+    margin: 10px;
+}
+
+hr {
+    margin-bottom: 0px;
+}
+.contact-sent-image {
+    width: 40%;
+    margin-right: 10%;
+    margin-left: 5%
+}
+
+.container-image {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+
+}
+
+.go-back-button {
+    color: white;
+    margin-top: 20px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%
+}
+
+
+.page-end {
+    background-color: #5A4A3F;
+}
+
+.pageEndText {
+    color: #AEA096;
+    margin-left: 30px;
+    margin-top: 25px;
+    margin-right: 30px;
+    display: inline-block;
+}
+.pageEndText-container {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.contact-page {
+    background-color: #AEA096;
+}
+
+.not-full-container {
+    height: calc(100vh - 100px);
+    position: relative;
+}

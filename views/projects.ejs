@@ -4,16 +4,20 @@
     <title><%= title %></title>
     <!--importing my css-->
     <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/projects.css'/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
     <!--importing jquery-->
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <!--setting device-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <section class="projects-page">
     <nav class="navbar">
         <div class="navbar-container">
-            <div class="navbar-brand" href="/">
+            <a class="navbar-brand" href="/#top">
                 <svg id="레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 231.3 231.3">
                     <circle cx="115.65" cy="115.65" r="115.15" style="fill:none;stroke-miterlimit:10"/>
                     <line x1="36.49" y1="199.27" x2="115.98" y2="0.79" style="fill:none;stroke-miterlimit:10"/>
@@ -25,20 +29,194 @@
                     <line x1="36.15" y1="32.34" x2="115.65" y2="115.34" style="fill:none;stroke-miterlimit:10"/>
                     <line x1="195.15" y1="32.34" x2="115.65" y2="115.34" style="fill:none;stroke-miterlimit:10"/>
                 </svg>
-            </div>
+            </a>
             <div class="navText-container">
                 <a href="/contact" class="navText navTextEnd">CONTACT</a>
-                <a href="/projects" class="navText navTextMiddle">PROJECTS</a>
+                <a href="/projects" class="navText navTextMiddle" id="navCurrent">PROJECTS</a>
                 <a href="/#Timeline" class="navText navTextMiddle">TIMELINE</a>
                 <a href="/#About" class="navText navTextMiddle">ABOUT</a>
             </div>
         </div>
     </nav>
     <div class="container not-full-container">
+        <div class="recentText">
+            <h3>RECENT</h3>
+        </div>
+        <div class="recent-posts">
+            <div class="post CleanBottle-post">
+                <div class="card-header">
+                </div>
+                <div class="postInfo">
+                    <span class="category coding-category">CODING</span>
+                    <div class="subtitle2">Machine learning based PET recycling</div>
+                    <div class="title2">Clean Bottle</div>
+                    <div class="hashtag2">#MachineLearning #Tensorflow #Arduino #CNN</div>
+                </div>
+            </div>
+            <div class="post DoUm-post">
+                <div class="card-header">
+                </div>
+                <div class="postInfo">
+                    <span class="category design-category">DESIGN</span>
+                    <div class="subtitle2">Smartphone application guide for seniors</div>
+                    <div class="title2">DoUm</div>
+                    <div class="hashtag2">#Design #UI/UX</div>
+                </div>
+            </div>
+            <div class="post USCWebsite-post">
+                <div class="card-header">
+                </div>
+                <div class="postInfo">
+                    <span class="category design-category">DESIGN</span>
+                    <div class="subtitle2">UI/UX Team</div>
+                    <div class="title2">USC Website</div>
+                    <div class="hashtag2">#Design #UI/UX</div>
+                </div>
+            </div>
+        </div>
+        <div class="see-all-button">
+            <div class="see-all-container">
+                <div class="see-all-text body1">
+                    See All
+                </div>
+                <a href="#all-projects">
+            <span class="iconify down-arrow" data-inline="false" data-icon="akar-icons:chevron-down"
+                  style="font-size: 60px;"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
+<section class="all-projects-page" id="all-projects">
+    <div class="container full-container all-posts-container">
+        <div class="left-arrow">
+            <span class="iconify" data-inline="false" data-icon="akar-icons:chevron-left"
+                  style="font-size: 59px;"></span>
+        </div>
+        <div class="all-posts">
+            <div class="filter">
+                <div class="btn active filterText all-filter-text" onclick="filterBlogs('all-filter-text')">ALL</div>
+                <div class="btn filterText design-filter-text" onclick="filterBlogs('design-filter-text')">DESIGN</div>
+                <div class="btn filterText coding-filter-text" onclick="filterBlogs('coding-filter-text')">CODING</div>
+                <div class="btn filterText leadership-filter-text" onclick="filterBlogs('leadership-filter-text')">
+                    LEADERSHIP
+                </div>
+                <div class="btn filterText experience-filter-text" onclick="filterBlogs('experience-filter-text')">
+                    EXPERIENCE
+                </div>
+                <div class="btn filterText other-filter-text" onclick="filterBlogs('other-filter-text')">OTHER</div>
+            </div>
+            <div class="first-row">
+                <div class="post CleanBottle-post">
+                    <div class="card-header">
+                    </div>
+                    <div class="postInfo">
+                        <span class="category coding-category">CODING</span>
+                        <div class="subtitle2">Machine learning based PET recycling</div>
+                        <div class="title2">Clean Bottle</div>
+                        <div class="hashtag2">#MachineLearning #Tensorflow #Arduino #CNN</div>
+                    </div>
+                </div>
+                <div class="post DoUm-post">
+                    <div class="card-header">
+                    </div>
+                    <div class="postInfo">
+                        <span class="category design-category">DESIGN</span>
+                        <div class="subtitle2">Smartphone application guide for seniors</div>
+                        <div class="title2">DoUm</div>
+                        <div class="hashtag2">#Design #UI/UX</div>
+                    </div>
+                </div>
+                <div class="post USCWebsite-post">
+                    <div class="card-header">
+                    </div>
+                    <div class="postInfo">
+                        <span class="category design-category">DESIGN</span>
+                        <div class="subtitle2">UI/UX Team</div>
+                        <div class="title2">USC Website</div>
+                        <div class="hashtag2">#Design #UI/UX</div>
+                    </div>
+                </div>
+            </div>
+            <div class="second-row">
+                <div class="post CleanBottle-post">
+                    <div class="card-header">
+                    </div>
+                    <div class="postInfo">
+                        <span class="category coding-category">CODING</span>
+                        <div class="subtitle2">Machine learning based PET recycling</div>
+                        <div class="title2">Clean Bottle</div>
+                        <div class="hashtag2">#MachineLearning #Tensorflow #Arduino #CNN</div>
+                    </div>
+                </div>
+                <div class="post DoUm-post">
+                    <div class="card-header">
+                    </div>
+                    <div class="postInfo">
+                        <span class="category design-category">DESIGN</span>
+                        <div class="subtitle2">Smartphone application guide for seniors</div>
+                        <div class="title2">DoUm</div>
+                        <div class="hashtag2">#Design #UI/UX</div>
+                    </div>
+                </div>
+                <div class="post USCWebsite-post">
+                    <div class="card-header">
+                    </div>
+                    <div class="postInfo">
+                        <span class="category design-category">DESIGN</span>
+                        <div class="subtitle2">UI/UX Team</div>
+                        <div class="title2">USC Website</div>
+                        <div class="hashtag2">#Design #UI/UX</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination-container">
+                <div class="pagination">
+                    <a href="#">&laquo;</a>
+                    <a href="#">1</a>
+                    <a href="#" class="active">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </div>
+        </div>
+        <div class="right-arrow">
+            <span class="iconify" data-inline="false" data-icon="akar-icons:chevron-right"
+                  style="font-size: 59px;"></span>
+        </div>
+    </div>
+</section>
+
+<section class="page-end">
+    <div class="container pageEndText-container">
+        <a href="https://linkedin.com/in/yooha-bae-1912b21a3/" target="_blank" class="navText pageEndText">LINKEDIN</a>
+        <a href="https://github.com/YoohaBae" target="_blank" class="navText pageEndText">GITHUB</a>
+        <a href="mailto: yooha.bae.2@gmail.com" target="_blank" class="navText pageEndText">EMAIL</a>
+    </div>
     </div>
 </section>
 <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    })
 
+    let currentFilter = 'all-filter-text';
+
+    function filterBlogs(c) {
+        let oldElement = document.getElementsByClassName(currentFilter)[0]
+        let newElement = document.getElementsByClassName(c)[0];
+        oldElement.classList.remove('active');
+        newElement.classList.add('active');
+        currentFilter = c;
+    };
 </script>
 </html>

@@ -4,6 +4,7 @@
     <title><%= title %></title>
     <!--importing my css-->
     <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/contact.css'/>
     <!--importing jquery-->
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
@@ -13,7 +14,7 @@
 <section class="contact-page">
     <nav class="navbar">
         <div class="navbar-container">
-            <div class="navbar-brand" href="/">
+            <a class="navbar-brand" href="/#top">
                 <svg id="레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 231.3 231.3">
                     <circle cx="115.65" cy="115.65" r="115.15" style="fill:none;stroke-miterlimit:10"/>
                     <line x1="36.49" y1="199.27" x2="115.98" y2="0.79" style="fill:none;stroke-miterlimit:10"/>
@@ -25,9 +26,9 @@
                     <line x1="36.15" y1="32.34" x2="115.65" y2="115.34" style="fill:none;stroke-miterlimit:10"/>
                     <line x1="195.15" y1="32.34" x2="115.65" y2="115.34" style="fill:none;stroke-miterlimit:10"/>
                 </svg>
-            </div>
+            </a>
             <div class="navText-container">
-                <a href="/contact" class="navText navTextEnd">CONTACT</a>
+                <a href="/contact" class="navText navTextEnd" id="navCurrent">CONTACT</a>
                 <a href="/projects" class="navText navTextMiddle">PROJECTS</a>
                 <a href="/#Timeline" class="navText navTextMiddle">TIMELINE</a>
                 <a href="/#About" class="navText navTextMiddle">ABOUT</a>
@@ -35,7 +36,28 @@
         </div>
     </nav>
     <div class="container not-full-container">
+        <div class="contactText">
+            <h3>CONTACT ME</h3>
+        </div>
+        <hr>
+        <div class="contact-info body1">
+            Interested in working with me? Tell me about your work.
+        </div>
+        <form class="contact-form" action="/contact" method="post">
+            <div class="nameInput"><input name="name" placeholder="Your Name" class="subtitle" required></div>
+            <div class="emailInput"><input type="email" name="email" placeholder="Your Email" class="subtitle" required></div>
+            <div class="messageInput"><textarea name="message" cols="5" rows="9" placeholder="Message" class="subtitle" required></textarea></div>
+            <button type="submit" class="send-button body1">SEND</button>
+        </form>
+    </div>
+</section>
 
+<section class="page-end">
+    <div class="container pageEndText-container">
+        <a href="https://linkedin.com/in/yooha-bae-1912b21a3/" target="_blank" class="navText pageEndText">LINKEDIN</a>
+        <a href="https://github.com/YoohaBae" target="_blank" class="navText pageEndText">GITHUB</a>
+        <a href="mailto: yooha.bae.2@gmail.com" target="_blank" class="navText pageEndText">EMAIL</a>
+    </div>
     </div>
 </section>
 <script>
