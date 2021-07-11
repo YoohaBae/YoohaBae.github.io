@@ -188,20 +188,21 @@ h3 {
     display: inline-block;
 }
 
-.pagination a {
+.pagination div {
     color: white;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
     transition: background-color .3s;
+    cursor: pointer;
 }
 
-.pagination a.active {
+.pagination div.active {
     background-color: #FFFFFF;
     color: black;
 }
 
-.pagination a:hover:not(.active) {background-color: #FF5151;}
+.pagination div:hover:not(.active) {background-color: #FF5151;}
 
 .pagination-container {
     display: flex;
@@ -224,4 +225,3 @@ h3 {
     margin-left: 10%;
     margin-right: 10%;
 }
-

@@ -10,12 +10,14 @@
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus ullamcorper vitae sollicitudin pellentesque. Ullamcorper sit sed gravida urna pellentesque. Eget quis facilisi viverra elementum ultricies sed. Etiam aliquam rhoncus sit orci, feugiat.\nTurpis non sed ac turpis etiam. Diam semper sollicitudin vestibulum at magna volutpat. Vivamus eros enim curabitur odio morbi. \n\nAt lectus adipiscing sollicitudin aliquet urna. Feugiat dictum lacus, ut nisl lorem. Convallis et habitasse vitae vitae eget sit. Vulputate semper pretium magna sed nisl. Non tristique viverra aliquam eu, vulputate id.",
     "github": "",
     "background": "",
-    "img": ""
+    "img": "",
+    "uploadTime" : "2019-02-01",
+    "className" : "DoUm"
   },
   {
     "title": "Clean Bottle",
     "subtitle": "Machine learning based PET recycling",
-    "hashtag": "#Python?#machine-learning?#Arduino?#Tensorflow/Keras",
+    "hashtag": "#Python #machine-learning #Arduino #Tensorflow/Keras",
     "category": "coding",
     "timeline": "2020.08~2020.12",
     "technique": "python, machine-learning",
@@ -23,7 +25,9 @@
     "content": "To solve the problem of the environment where plastic bottles are not easily recycled in Korea, we came up with and implemented the idea of a recycling vending machine with machine learning that automatically identifies plastic bottles with labels and contents, creating 99.9% accurate models and prototypes using Arduino.",
     "github": "https://github.com/YoohaBae/CleanBottle",
     "background": "",
-    "img": ""
+    "img": "",
+    "uploadTime" : "2016-04-12",
+    "className" : "CleanBottle"
   },
   {
     "title": "USC Website",
@@ -36,6 +40,53 @@
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus ullamcorper vitae sollicitudin pellentesque. Ullamcorper sit sed gravida urna pellentesque. Eget quis facilisi viverra elementum ultricies sed. Etiam aliquam rhoncus sit orci, feugiat.\nTurpis non sed ac turpis etiam. Diam semper sollicitudin vestibulum at magna volutpat. Vivamus eros enim curabitur odio morbi. \n\nAt lectus adipiscing sollicitudin aliquet urna. Feugiat dictum lacus, ut nisl lorem. Convallis et habitasse vitae vitae eget sit. Vulputate semper pretium magna sed nisl. Non tristique viverra aliquam eu, vulputate id.",
     "github": "",
     "background": "",
-    "img": ""
+    "img": "",
+    "uploadTime" : "2017-02-01",
+    "className" : "USC"
+  },
+  {
+    "title": "DoUm",
+    "subtitle": "Smartphone application guide for seniors",
+    "hashtag": "#Design #UI/UX",
+    "category": "design",
+    "timeline": "2020.03~2020.06",
+    "technique": "figma, UI/UX, HCI",
+    "task": "Designing the interfaces of the mobile website, Interviewing potential users",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus ullamcorper vitae sollicitudin pellentesque. Ullamcorper sit sed gravida urna pellentesque. Eget quis facilisi viverra elementum ultricies sed. Etiam aliquam rhoncus sit orci, feugiat.\nTurpis non sed ac turpis etiam. Diam semper sollicitudin vestibulum at magna volutpat. Vivamus eros enim curabitur odio morbi. \n\nAt lectus adipiscing sollicitudin aliquet urna. Feugiat dictum lacus, ut nisl lorem. Convallis et habitasse vitae vitae eget sit. Vulputate semper pretium magna sed nisl. Non tristique viverra aliquam eu, vulputate id.",
+    "github": "",
+    "background": "",
+    "img": "",
+    "uploadTime" : "2019-02-01",
+    "className" : "DoUm"
+  },
+  {
+    "title": "Clean Bottle",
+    "subtitle": "Machine learning based PET recycling",
+    "hashtag": "#Python #machine-learning #Arduino #Tensorflow/Keras",
+    "category": "coding",
+    "timeline": "2020.08~2020.12",
+    "technique": "python, machine-learning",
+    "task": "Developing the cnn model using tensorflow",
+    "content": "To solve the problem of the environment where plastic bottles are not easily recycled in Korea, we came up with and implemented the idea of a recycling vending machine with machine learning that automatically identifies plastic bottles with labels and contents, creating 99.9% accurate models and prototypes using Arduino.",
+    "github": "https://github.com/YoohaBae/CleanBottle",
+    "background": "",
+    "img": "",
+    "uploadTime" : "2016-04-12",
+    "className" : "CleanBottle"
+  },
+  {
+    "title": "USC Website",
+    "subtitle": "Designing the USC Website for SUNY Korea",
+    "hashtag": "#Design #UI/UX",
+    "category": "design",
+    "timeline": "2020.10~2021.03",
+    "technique": "figma, UI/UX",
+    "task": "Designing the interfaces of the website",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus ullamcorper vitae sollicitudin pellentesque. Ullamcorper sit sed gravida urna pellentesque. Eget quis facilisi viverra elementum ultricies sed. Etiam aliquam rhoncus sit orci, feugiat.\nTurpis non sed ac turpis etiam. Diam semper sollicitudin vestibulum at magna volutpat. Vivamus eros enim curabitur odio morbi. \n\nAt lectus adipiscing sollicitudin aliquet urna. Feugiat dictum lacus, ut nisl lorem. Convallis et habitasse vitae vitae eget sit. Vulputate semper pretium magna sed nisl. Non tristique viverra aliquam eu, vulputate id.",
+    "github": "",
+    "background": "",
+    "img": "",
+    "uploadTime" : "2017-02-01",
+    "className" : "USC"
   }
 ]

@@ -43,36 +43,7 @@
             <h3>RECENT</h3>
         </div>
         <div class="recent-posts">
-            <div class="post CleanBottle-post">
-                <div class="card-header">
-                </div>
-                <div class="postInfo">
-                    <span class="category coding-category">CODING</span>
-                    <div class="subtitle2">Machine learning based PET recycling</div>
-                    <div class="title2">Clean Bottle</div>
-                    <div class="hashtag2">#MachineLearning #Tensorflow #Arduino #CNN</div>
-                </div>
-            </div>
-            <div class="post DoUm-post">
-                <div class="card-header">
-                </div>
-                <div class="postInfo">
-                    <span class="category design-category">DESIGN</span>
-                    <div class="subtitle2">Smartphone application guide for seniors</div>
-                    <div class="title2">DoUm</div>
-                    <div class="hashtag2">#Design #UI/UX</div>
-                </div>
-            </div>
-            <div class="post USCWebsite-post">
-                <div class="card-header">
-                </div>
-                <div class="postInfo">
-                    <span class="category design-category">DESIGN</span>
-                    <div class="subtitle2">UI/UX Team</div>
-                    <div class="title2">USC Website</div>
-                    <div class="hashtag2">#Design #UI/UX</div>
-                </div>
-            </div>
+
         </div>
         <div class="see-all-button">
             <div class="see-all-container">
@@ -107,80 +78,11 @@
                 </div>
                 <div class="btn filterText other-filter-text" onclick="filterBlogs('other-filter-text')">OTHER</div>
             </div>
-            <div class="first-row">
-                <div class="post CleanBottle-post">
-                    <div class="card-header">
-                    </div>
-                    <div class="postInfo">
-                        <span class="category coding-category">CODING</span>
-                        <div class="subtitle2">Machine learning based PET recycling</div>
-                        <div class="title2">Clean Bottle</div>
-                        <div class="hashtag2">#MachineLearning #Tensorflow #Arduino #CNN</div>
-                    </div>
-                </div>
-                <div class="post DoUm-post">
-                    <div class="card-header">
-                    </div>
-                    <div class="postInfo">
-                        <span class="category design-category">DESIGN</span>
-                        <div class="subtitle2">Smartphone application guide for seniors</div>
-                        <div class="title2">DoUm</div>
-                        <div class="hashtag2">#Design #UI/UX</div>
-                    </div>
-                </div>
-                <div class="post USCWebsite-post">
-                    <div class="card-header">
-                    </div>
-                    <div class="postInfo">
-                        <span class="category design-category">DESIGN</span>
-                        <div class="subtitle2">Designing the USC Website for SUNY Korea</div>
-                        <div class="title2">USC Website</div>
-                        <div class="hashtag2">#Design #UI/UX</div>
-                    </div>
-                </div>
-            </div>
-            <div class="second-row">
-                <div class="post CleanBottle-post">
-                    <div class="card-header">
-                    </div>
-                    <div class="postInfo">
-                        <span class="category coding-category">CODING</span>
-                        <div class="subtitle2">Machine learning based PET recycling</div>
-                        <div class="title2">Clean Bottle</div>
-                        <div class="hashtag2">#MachineLearning #Tensorflow #Arduino #CNN</div>
-                    </div>
-                </div>
-                <div class="post DoUm-post">
-                    <div class="card-header">
-                    </div>
-                    <div class="postInfo">
-                        <span class="category design-category">DESIGN</span>
-                        <div class="subtitle2">Smartphone application guide for seniors</div>
-                        <div class="title2">DoUm</div>
-                        <div class="hashtag2">#Design #UI/UX</div>
-                    </div>
-                </div>
-                <div class="post USCWebsite-post">
-                    <div class="card-header">
-                    </div>
-                    <div class="postInfo">
-                        <span class="category design-category">DESIGN</span>
-                        <div class="subtitle2">UI/UX Team</div>
-                        <div class="title2">USC Website</div>
-                        <div class="hashtag2">#Design #UI/UX</div>
-                    </div>
-                </div>
+            <div class="all-pages">
             </div>
             <div class="pagination-container">
                 <div class="pagination">
-                    <a href="#">&laquo;</a>
-                    <a href="#">1</a>
-                    <a href="#" class="active">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">&raquo;</a>
+
                 </div>
             </div>
         </div>
@@ -218,5 +120,82 @@
         newElement.classList.add('active');
         currentFilter = c;
     };
+
+    var currentPage = 0;
+
+
+    function custom_sort(a, b) {
+        return new Date(b.uploadTime).getTime() - new Date(a.uploadTime).getTime();
+    }
+
+    $.getJSON("database/blogs.json", function (data) {
+        data.sort(custom_sort);
+        var recentPosts = data.slice(0, 3);
+        recentPosts.forEach(function (element, index) {
+            $('.recent-posts').append(
+                "<div class='post " + element.className + " '>" +
+                "<div class='card-header'></div>" +
+                "<div class='postInfo'>" +
+                "<span class='category " + element.category + "-category'>" + element.category + "</span>" +
+                "<div class=\"subtitle2\">" + element.subtitle + "</div>" +
+                "<div class=\"title2\">" + element.title + "</div>" +
+                "<div class=\"hashtag2\">" + element.hashtag + "</div>" +
+                "</div></div>");
+        })
+        data.forEach(function (element, index) {
+            if (index % 6 == 0) {
+                $('.all-pages').append("<div class='page" + (index / 6 >> 0) + "'></div>");
+            }
+            if (index % 3 == 0) {
+                $('.page' + (index / 6 >> 0)).append("<div class='row" + (index / 3 >> 0) + "'></div>");
+            }
+            $('.row' + (index / 3 >> 0)).append(
+                "<div class='post " + element.className + " '>" +
+                "<div class='card-header'></div>" +
+                "<div class='postInfo'>" +
+                "<span class='category " + element.category + "-category'>" + element.category + "</span>" +
+                "<div class=\"subtitle2\">" + element.subtitle + "</div>" +
+                "<div class=\"title2\">" + element.title + "</div>" +
+                "<div class=\"hashtag2\">" + element.hashtag + "</div>" +
+                "</div></div>");
+        })
+        $('.pagination').append(`<div onclick="previousPage()">&laquo;</div>`)
+        for (let i = 0; i < data.length / 6 >> 0; i++) {
+            if (i == 0) {
+                $('.pagination').append(`<div class='paginationNum pagination-` + i +` active'>` + (i + 1) + `</div>`);
+            } else {
+                $('.pagination').append(`<div class='paginationNum pagination-` + i +`'>` + (i + 1) + `</div>`);
+            }
+        }
+        $('.pagination').append(`<div onclick="nextPage()">&raquo;</div>`);
+        for (let i = 0; i < data.length / 6 >> 0; i++) {
+            $('.page'+i).hide();
+        }
+        $('.page'+currentPage).show();
+    });
+
+
+    $(document).ready(function() {
+        $('.paginationNum').click(changePage(1));
+    });
+
+    function changePage(pageTo) {
+        console.log(currentPage);
+        $('.paginationNum').click(function() {
+            $('.pagination-' + currentPage).removeClass('active');
+            $('.pagination-' + pageTo).addClass('active');
+            currentPage = pageTo;
+        });
+    }
+
+    function nextPage() {
+        changePage(currentPage+1);
+    }
+
+    function previousPage() {
+        changePage(currentPage-1);
+    }
 </script>
+
 </html>
+
