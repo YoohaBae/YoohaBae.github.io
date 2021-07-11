@@ -22,6 +22,7 @@ app.use(cookieParser());
 
 app.use(express.static(__dirname + '/public'));
 app.use('/images', express.static('public'));
+app.use('/database', express.static('public'));
 
 app.use('/', indexRouter);
 app.use('/projects', projectsRouter);

@@ -99,3 +99,7 @@ hr {
     height: calc(100vh - 100px);
     position: relative;
 }
+
+button {
+    cursor: pointer;
+}

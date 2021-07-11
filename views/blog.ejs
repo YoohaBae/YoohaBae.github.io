@@ -4,16 +4,20 @@
     <title><%= title %></title>
     <!--importing my css-->
     <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/blog.css'/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
     <!--importing jquery-->
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <!--setting device-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <section class="blog-page">
     <nav class="navbar">
         <div class="navbar-container">
-            <div class="navbar-brand" href="/">
+            <a class="navbar-brand" href="/#top">
                 <svg id="레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 231.3 231.3">
                     <circle cx="115.65" cy="115.65" r="115.15" style="fill:none;stroke-miterlimit:10"/>
                     <line x1="36.49" y1="199.27" x2="115.98" y2="0.79" style="fill:none;stroke-miterlimit:10"/>
@@ -25,20 +29,56 @@
                     <line x1="36.15" y1="32.34" x2="115.65" y2="115.34" style="fill:none;stroke-miterlimit:10"/>
                     <line x1="195.15" y1="32.34" x2="115.65" y2="115.34" style="fill:none;stroke-miterlimit:10"/>
                 </svg>
-            </div>
+            </a>
             <div class="navText-container">
                 <a href="/contact" class="navText navTextEnd">CONTACT</a>
-                <a href="/projects" class="navText navTextMiddle">PROJECTS</a>
-                <a href="#Timeline" class="navText navTextMiddle">TIMELINE</a>
-                <a href="#About" class="navText navTextMiddle">ABOUT</a>
+                <a href="/projects" class="navText navTextMiddle" id="navCurrent">PROJECTS</a>
+                <a href="/#Timeline" class="navText navTextMiddle">TIMELINE</a>
+                <a href="/#About" class="navText navTextMiddle">ABOUT</a>
             </div>
         </div>
     </nav>
+    <div class="blog-image">
+    </div>
     <div class="container not-full-container">
-
+        <span class="category design-category">DESIGN</span>
+        <div class="subtitle">
+            Smartphone application guide for seniors
+        </div>
+        <div class="title">
+            DoUm
+        </div>
+        <div class="hashtag">
+            #Design #UI/UX
+        </div>
+        <div class="blog-content body1">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus ullamcorper vitae sollicitudin
+            pellentesque. Ullamcorper sit sed gravida urna pellentesque. Eget quis facilisi viverra elementum ultricies
+            sed. Etiam aliquam rhoncus sit orci, feugiat.
+            Turpis non sed ac turpis etiam. Diam semper sollicitudin vestibulum at magna volutpat. Vivamus eros enim
+            curabitur odio morbi.
+            <br><br>
+            At lectus adipiscing sollicitudin aliquet urna. Feugiat dictum lacus, ut nisl lorem. Convallis et habitasse
+            vitae vitae eget sit. Vulputate semper pretium magna sed nisl. Non tristique viverra aliquam eu, vulputate
+            id. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus ullamcorper vitae sollicitudin
+            pellentesque. Ullamcorper sit sed gravida urna pellentesque. Eget quis facilisi viverra elementum ultricies
+            sed. Etiam aliquam rhoncus sit orci, feugiat.
+            Turpis non sed ac turpis etiam. Diam semper sollicitudin vestibulum at magna volutpat. Vivamus eros enim
+            curabitur odio morbi.
+            <br><br>
+            At lectus adipiscing sollicitudin aliquet urna. Feugiat dictum lacus, ut nisl lorem. Convallis et habitasse
+            vitae vitae eget sit. Vulputate semper pretium magna sed nisl. Non tristique viverra aliquam eu, vulputate
+            id.
+        </div>
     </div>
 </section>
-<script>
 
-</script>
+<section class="page-end">
+    <div class="container pageEndText-container">
+        <a href="https://linkedin.com/in/yooha-bae-1912b21a3/" target="_blank" class="navText pageEndText">LINKEDIN</a>
+        <a href="https://github.com/YoohaBae" target="_blank" class="navText pageEndText">GITHUB</a>
+        <a href="mailto: yooha.bae.2@gmail.com" target="_blank" class="navText pageEndText">EMAIL</a>
+    </div>
+    </div>
+</section>
 </html>
