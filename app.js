@@ -9,6 +9,7 @@ var projectsRouter = require('./routes/projects');
 var contactRouter = require('./routes/contact');
 var contactSentRouter = require('./routes/contact-sent');
 var blogRouter = require('./routes/blog');
+var timelineRouter = require('./routes/timeline');
 var app = express();
 
 // view engine setup
@@ -30,6 +31,7 @@ app.use('/contact', contactRouter);
 app.use('/blog', blogRouter);
 app.post('/contact', contactRouter)
 app.use('/contact-sent', contactSentRouter);
+app.use('/timeline', timelineRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
