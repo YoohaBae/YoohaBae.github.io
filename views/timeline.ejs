@@ -51,7 +51,8 @@
     </div>
 </section>
 
-<script>
+<script type="module">
+
     function isMobile() {
         var UserAgent = navigator.userAgent;
         if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null) {
@@ -62,45 +63,27 @@
 
     }
 
+    await fetchJsonFile('/database/projects.json')
+        .then((data) => {
+            createTimeline(data)
+        })
+
+    async function fetchJsonFile(path) {
+        let response = await fetch(path);
+        let data = await response.json();
+        return data;
+    }
+
     window.onload = () => {
         if (isMobile()) {
             console.log(true);
         }
     }
 
-    $.ajax({
-        type: "GET",
-        url: "/database/projects.csv",
-        dataType: "text",
-        success: function (data) {
-            var array = csvToArray(data);
-            createTimeline(array);
-        }
-    });
-
-    function csvToArray(csv_string) {
-        const rows = csv_string.split("\r\n");
-        const jsonArray = [];
-        const header = rows[0].split(",");
-        for (let i = 1; i < rows.length; i++) {
-            let obj = {};
-            let row = rows[i].split(",");
-            for (let j = 0; j < header.length; j++) {
-                obj[header[j]] = row[j];
-            }
-            jsonArray.push(obj);
-        }
-        return jsonArray;
-
-    }
-
-
     function createTimeline(data) {
         let timeline = document.getElementsByClassName("timeline")[0];
-
-        console.log(data);
         for (let i = 0; i < data.length; i++) {
-            if (data[i]['Category'] == undefined) {
+            if (data[i][2] === undefined) {
                 continue;
             }
             let div1 = document.createElement("timeline-content");
@@ -108,30 +91,26 @@
 
             let span1 = document.createElement('span');
             span1.classList.add("content_tag");
-            span1.innerText = data[i]['Category'];
-            if(data[i]['Category'] === "Coding") {
+            span1.innerText = data[i][2];
+            if (data[i][2] === "Coding") {
                 span1.classList.add("coding-category");
-            }
-            else if(data[i]['Category'] === "Design") {
+            } else if (data[i][2] === "Design") {
                 span1.classList.add("design-category");
-            }
-            else if(data[i]['Category'] === "Leadership") {
+            } else if (data[i][2] === "Leadership") {
                 span1.classList.add("leadership-category");
-            }
-            else if(data[i]['Category'] === "Experience") {
+            } else if (data[i][2] === "Experience") {
                 span1.classList.add("experience-category");
-            }
-            else {
+            } else {
                 span1.classList.add("other-category");
             }
 
             let span2 = document.createElement('span');
             span2.classList.add("content_date");
-            span2.innerText = data[i]['Date'];
+            span2.innerText = data[i][1];
 
             let p1 = document.createElement('p');
             p1.classList.add("content_p");
-            p1.innerText = data[i]['Title'];
+            p1.innerText = data[i][0];
 
             let a1 = document.createElement('a');
             a1.href = "#";
@@ -149,6 +128,7 @@
             div1.appendChild(p1);
             div1.appendChild(a1);
 
+            console.log("here");
             timeline.appendChild(div1);
         }
 
