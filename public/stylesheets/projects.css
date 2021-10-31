@@ -80,7 +80,7 @@ html {
 .post {
     display: inline-block;
     border-radius: 10px;
-    margin: 30px;
+    margin: 2vw;
 }
 
 .card-header {
@@ -142,13 +142,13 @@ h3 {
     font-family: Franklin Gothic Heavy;
     font-style: normal;
     font-weight: 900;
-    font-size: 24px;
+    font-size: 2vw;
     line-height: 40px;
     text-decoration:none;
     color: white;
     display: inline-block;
-    margin-top: 40px;
-    margin-right: 35px;
+    margin-top: 4vh;
+    margin-right: 1vw;
 }
 
 .filterText:hover {
@@ -167,11 +167,17 @@ h3 {
 }
 
 .left-arrow {
-    margin-right: 40px;
+    margin-right: 2vw;
 }
 
 .right-arrow {
-    margin-left: 40px;
+    margin-left: 2vw;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
 }
 
 .all-posts-container {
@@ -186,7 +192,7 @@ h3 {
 }
 
 .pagination div {
-    color: white;
+    color: #AEA096;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
@@ -194,6 +200,7 @@ h3 {
     cursor: pointer;
 }
 
+.all-posts {}
 .pagination div.active {
     background-color: #FFFFFF;
     color: black;
@@ -222,3 +229,11 @@ h3 {
     margin-left: 10%;
     margin-right: 10%;
 }
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+

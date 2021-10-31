@@ -86,7 +86,7 @@
 
 .aboutText {
     text-align: center;
-    margin: 10vh;
+    padding: 10vh;
     display: flex;
     align-content: center;
 }
@@ -104,6 +104,17 @@ h2 {
     height: auto;
 }
 
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a {
+    color: #5A4A3F;
+}
 
 .aboutContent {
     color: white;
@@ -204,6 +215,7 @@ html {
 .vertically-center {
     display: flex;
     align-content: center;
+    height: 60vh
 }
 
 @keyframes image-in {
@@ -289,14 +301,16 @@ html {
 }
 
 .skills {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin-right: 20px
 }
 
-.aboutText, .aboutContent, .skills {
-    display: none;
+.aboutText {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .introText {

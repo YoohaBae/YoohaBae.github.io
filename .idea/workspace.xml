@@ -20,9 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d92d036e-41e9-43d3-814e-f6129a14858f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/database/blogs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/database/projects.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/database/projects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/database/blogs.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/database/blogs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/projects.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/projects.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/projects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/contact.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/contact.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/projects.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/projects.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +91,7 @@
       <workItem from="1627363558837" duration="923000" />
       <workItem from="1627526895252" duration="2703000" />
       <workItem from="1635507930427" duration="3854000" />
-      <workItem from="1635598785431" duration="10676000" />
+      <workItem from="1635598785431" duration="21240000" />
     </task>
     <servers />
   </component>
@@ -117,6 +123,10 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1635609064056" />
+    <state x="413" y="173" key="RollbackChangesDialog" timestamp="1635689926970">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="413" y="173" key="RollbackChangesDialog/0.0.1536.816@0.0.1536.816" timestamp="1635689926970" />
     <state x="277" y="52" key="SettingsEditor" timestamp="1635600581469">
       <screen x="0" y="0" width="1536" height="816" />
     </state>

@@ -10,6 +10,7 @@
     <!--importing jquery-->
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <!--setting device-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -61,7 +62,7 @@
 
 <section class="all-projects-page" id="all-projects">
     <div class="container full-container all-posts-container">
-        <div class="left-arrow">
+        <div class="left-arrow" onclick="previousPage()">
             <span class="iconify" data-inline="false" data-icon="akar-icons:chevron-left"
                   style="font-size: 59px;"></span>
         </div>
@@ -86,7 +87,7 @@
                 </div>
             </div>
         </div>
-        <div class="right-arrow">
+        <div class="right-arrow" onclick="nextPage()">
             <span class="iconify" data-inline="false" data-icon="akar-icons:chevron-right"
                   style="font-size: 59px;"></span>
         </div>
@@ -101,7 +102,34 @@
     </div>
     </div>
 </section>
+
 <script>
+    $(document).ready(function () {
+        window.currentPage = 0;
+        window.fullPage = 0;
+
+        const queryFilter = '<%= filter %>';
+        window.currentFilter = 'all-filter-text';
+        let filter = null;
+        if(queryFilter === "designer") {
+            filter = "design-filter-text";
+            create_filter_page(filter);
+        }
+        else if (queryFilter === "developer") {
+            filter = "coding-filter-text";
+            create_filter_page(filter);
+        }
+
+        else if (queryFilter === "leader") {
+            filter = "leadership-filter-text";
+            create_filter_page(filter);
+        }
+        else {
+            create_page(filter);
+        }
+        $('.paginationNum').click(changePage(0));
+    });
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -111,89 +139,221 @@
         });
     })
 
-    let currentFilter = 'all-filter-text';
+    function create_filter_page(filter) {
+        $.getJSON("database/blogs.json", function (data) {
+            data.sort(custom_sort);
+            window.data = data;
+            window.fullPage = math.ceil(data.length / 6);
+            var recentPosts = data.slice(0, 3);
+            recentPosts.forEach(function (element) {
+                $('.recent-posts').append(
+                    "<div class='post " + element.className + " '>" +
+                    "<div class='card-header'></div>" +
+                    "<div class='postInfo'>" +
+                    "<span class='category " + element.category + "-category'>" + element.category + "</span>" +
+                    "<div class=\"subtitle2\">" + element.subtitle + "</div>" +
+                    "<div class=\"title2\">" + element.title + "</div>" +
+                    "<div class=\"hashtag2\">" + element.hashtag + "</div>" +
+                    "</div></div>");
+            })
+
+            let oldElement = document.getElementsByClassName(window.currentFilter)[0]
+            let newElement = document.getElementsByClassName(filter)[0];
+            oldElement.classList.remove('active');
+            newElement.classList.add('active');
+            window.currentFilter = filter;
+
+            let div = document.getElementsByClassName('all-pages')[0];
+            div.innerHTML = "";
+
+
+            let count = 0;
+
+
+            data.forEach(function (element) {
+                if (window.currentFilter.split('-')[0] !== "all") {
+                    if (element.category !== window.currentFilter.split('-')[0]) {
+                        console.log(element.category);
+                        return;
+                    }
+                }
+
+                if (count % 6 === 0) {
+                    $('.all-pages').append("<div class='page" + (count / 6 >> 0) + " page'></div>");
+                }
+                if (count % 3 === 0) {
+                    $('.page' + (count / 6 >> 0)).append("<div class='row" + (count / 3 >> 0) + " row'></div>");
+                }
+                $('.row' + (count / 3 >> 0)).append(
+                    "<div class='post " + element.className + " '>" +
+                    "<div class='card-header'></div>" +
+                    "<div class='postInfo'>" +
+                    "<span class='category " + element.category + "-category'>" + element.category + "</span>" +
+                    "<div class=\"subtitle2\">" + element.subtitle + "</div>" +
+                    "<div class=\"title2\">" + element.title + "</div>" +
+                    "<div class=\"hashtag2\">" + element.hashtag + "</div>" +
+                    "</div></div>");
+                count += 1;
+            })
+            let pagination = document.getElementsByClassName('pagination')[0];
+            pagination.innerHTML = "";
+            $('.pagination').append(`<div onclick="previousPage()">&laquo;</div>`)
+            window.fullPage = math.ceil(count / 6);
+            for (let i = 0; i < window.fullPage; i++) {
+                if (i == 0) {
+                    $('.pagination').append(`<div class='paginationNum pagination-` + i + ` active'>` + (i + 1) + `</div>`);
+                } else {
+                    $('.pagination').append(`<div class='paginationNum pagination-` + i + `'>` + (i + 1) + `</div>`);
+                }
+            }
+            $('.pagination').append(`<div onclick="nextPage()">&raquo;</div>`);
+
+            for (let i = 0; i < window.fullPage; i++) {
+                $('.page' + i).hide();
+            }
+            window.currentPage = 0;
+            $('.page' + window.currentPage).show();
+
+            //move to bottom;
+            document.querySelector('#all-projects').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    function create_page() {
+        $.getJSON("database/blogs.json", function (data) {
+            data.sort(custom_sort);
+            window.data = data;
+            window.fullPage = math.ceil(data.length / 6);
+            var recentPosts = data.slice(0, 3);
+            recentPosts.forEach(function (element) {
+                $('.recent-posts').append(
+                    "<div class='post " + element.className + " '>" +
+                    "<div class='card-header'></div>" +
+                    "<div class='postInfo'>" +
+                    "<span class='category " + element.category + "-category'>" + element.category + "</span>" +
+                    "<div class=\"subtitle2\">" + element.subtitle + "</div>" +
+                    "<div class=\"title2\">" + element.title + "</div>" +
+                    "<div class=\"hashtag2\">" + element.hashtag + "</div>" +
+                    "</div></div>");
+            })
+
+            data.forEach(function (element, index) {
+                if (index % 6 === 0) {
+                    $('.all-pages').append("<div class='page" + (index / 6 >> 0) + " page'></div>");
+                }
+                if (index % 3 === 0) {
+                    $('.page' + (index / 6 >> 0)).append("<div class='row" + (index / 3 >> 0) + " row'></div>");
+                }
+                $('.row' + (index / 3 >> 0)).append(
+                    "<div class='post " + element.className + " '>" +
+                    "<div class='card-header'></div>" +
+                    "<div class='postInfo'>" +
+                    "<span class='category " + element.category + "-category'>" + element.category + "</span>" +
+                    "<div class=\"subtitle2\">" + element.subtitle + "</div>" +
+                    "<div class=\"title2\">" + element.title + "</div>" +
+                    "<div class=\"hashtag2\">" + element.hashtag + "</div>" +
+                    "</div></div>");
+            })
+            $('.pagination').append(`<div onclick="previousPage()">&laquo;</div>`)
+            for (let i = 0; i < data.length / 6 >> 0; i++) {
+                if (i == 0) {
+                    $('.pagination').append(`<div class='paginationNum pagination-` + i + ` active'>` + (i + 1) + `</div>`);
+                } else {
+                    $('.pagination').append(`<div class='paginationNum pagination-` + i + `'>` + (i + 1) + `</div>`);
+                }
+            }
+            $('.pagination').append(`<div onclick="nextPage()">&raquo;</div>`);
+            for (let i = 0; i < window.fullPage; i++) {
+                $('.page' + i).hide();
+            }
+            $('.page' + window.currentPage).show();
+        });
+    }
 
     function filterBlogs(c) {
-        let oldElement = document.getElementsByClassName(currentFilter)[0]
+        let oldElement = document.getElementsByClassName(window.currentFilter)[0]
         let newElement = document.getElementsByClassName(c)[0];
         oldElement.classList.remove('active');
         newElement.classList.add('active');
-        currentFilter = c;
-    };
+        window.currentFilter = c;
 
-    var currentPage = 0;
+        let div = document.getElementsByClassName('all-pages')[0];
+        div.innerHTML = "";
+
+
+        let count = 0;
+        window.data.forEach(function (element) {
+            if (window.currentFilter.split('-')[0] !== "all") {
+                if (element.category !== window.currentFilter.split('-')[0]) {
+                    console.log(element.category);
+                    return;
+                }
+            }
+
+            if (count % 6 === 0) {
+                $('.all-pages').append("<div class='page" + (count / 6 >> 0) + " page'></div>");
+            }
+            if (count % 3 === 0) {
+                $('.page' + (count / 6 >> 0)).append("<div class='row" + (count / 3 >> 0) + " row'></div>");
+            }
+            $('.row' + (count / 3 >> 0)).append(
+                "<div class='post " + element.className + " '>" +
+                "<div class='card-header'></div>" +
+                "<div class='postInfo'>" +
+                "<span class='category " + element.category + "-category'>" + element.category + "</span>" +
+                "<div class=\"subtitle2\">" + element.subtitle + "</div>" +
+                "<div class=\"title2\">" + element.title + "</div>" +
+                "<div class=\"hashtag2\">" + element.hashtag + "</div>" +
+                "</div></div>");
+            count += 1;
+        })
+        let pagination = document.getElementsByClassName('pagination')[0];
+        pagination.innerHTML = "";
+        $('.pagination').append(`<div onclick="previousPage()">&laquo;</div>`)
+        window.fullPage = math.ceil(count / 6);
+        for (let i = 0; i < window.fullPage; i++) {
+            if (i == 0) {
+                $('.pagination').append(`<div class='paginationNum pagination-` + i + ` active'>` + (i + 1) + `</div>`);
+            } else {
+                $('.pagination').append(`<div class='paginationNum pagination-` + i + `'>` + (i + 1) + `</div>`);
+            }
+        }
+        $('.pagination').append(`<div onclick="nextPage()">&raquo;</div>`);
+
+        for (let i = 0; i < window.fullPage; i++) {
+            $('.page' + i).hide();
+        }
+        window.currentPage = 0;
+        $('.page' + window.currentPage).show();
+
+    };
 
 
     function custom_sort(a, b) {
         return new Date(b.uploadTime).getTime() - new Date(a.uploadTime).getTime();
     }
 
-    $.getJSON("database/blogs.json", function (data) {
-        data.sort(custom_sort);
-        var recentPosts = data.slice(0, 3);
-        recentPosts.forEach(function (element, index) {
-            $('.recent-posts').append(
-                "<div class='post " + element.className + " '>" +
-                "<div class='card-header'></div>" +
-                "<div class='postInfo'>" +
-                "<span class='category " + element.category + "-category'>" + element.category + "</span>" +
-                "<div class=\"subtitle2\">" + element.subtitle + "</div>" +
-                "<div class=\"title2\">" + element.title + "</div>" +
-                "<div class=\"hashtag2\">" + element.hashtag + "</div>" +
-                "</div></div>");
-        })
-        data.forEach(function (element, index) {
-            if (index % 6 == 0) {
-                $('.all-pages').append("<div class='page" + (index / 6 >> 0) + "'></div>");
-            }
-            if (index % 3 == 0) {
-                $('.page' + (index / 6 >> 0)).append("<div class='row" + (index / 3 >> 0) + "'></div>");
-            }
-            $('.row' + (index / 3 >> 0)).append(
-                "<div class='post " + element.className + " '>" +
-                "<div class='card-header'></div>" +
-                "<div class='postInfo'>" +
-                "<span class='category " + element.category + "-category'>" + element.category + "</span>" +
-                "<div class=\"subtitle2\">" + element.subtitle + "</div>" +
-                "<div class=\"title2\">" + element.title + "</div>" +
-                "<div class=\"hashtag2\">" + element.hashtag + "</div>" +
-                "</div></div>");
-        })
-        $('.pagination').append(`<div onclick="previousPage()">&laquo;</div>`)
-        for (let i = 0; i < data.length / 6 >> 0; i++) {
-            if (i == 0) {
-                $('.pagination').append(`<div class='paginationNum pagination-` + i +` active'>` + (i + 1) + `</div>`);
-            } else {
-                $('.pagination').append(`<div class='paginationNum pagination-` + i +`'>` + (i + 1) + `</div>`);
-            }
-        }
-        $('.pagination').append(`<div onclick="nextPage()">&raquo;</div>`);
-        for (let i = 0; i < data.length / 6 >> 0; i++) {
-            $('.page'+i).hide();
-        }
-        $('.page'+currentPage).show();
-    });
-
-
-    $(document).ready(function() {
-        $('.paginationNum').click(changePage(1));
-    });
-
     function changePage(pageTo) {
-        console.log(currentPage);
-        $('.paginationNum').click(function() {
-            $('.pagination-' + currentPage).removeClass('active');
-            $('.pagination-' + pageTo).addClass('active');
-            currentPage = pageTo;
-        });
+        $('.pagination-' + window.currentPage).removeClass('active');
+        $('.pagination-' + pageTo).addClass('active');
+        $('.page' + window.currentPage).css('display', 'none');
+        window.currentPage = pageTo;
+        $('.page' + window.currentPage).css('display', 'flex');
+        console.log("here");
     }
 
     function nextPage() {
-        changePage(currentPage+1);
+        if (window.currentPage + 1 < window.fullPage) {
+            changePage(window.currentPage + 1);
+        }
     }
 
     function previousPage() {
-        changePage(currentPage-1);
+        if (window.currentPage > 0) {
+            changePage(window.currentPage - 1);
+        }
     }
 </script>
 
