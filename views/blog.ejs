@@ -40,41 +40,22 @@
     </nav>
     <div class="blog-image">
     </div>
-    <div class="container not-full-container">
-        <span class="category design-category">DESIGN</span>
+    <div class="blog-container">
+        <div class="category-container">
+        </div>
         <div class="subtitle">
-            Smartphone application guide for seniors
         </div>
         <div class="title">
-            DoUm
         </div>
         <div class="hashtag">
-            #Design #UI/UX
         </div>
         <div class="blog-content body1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus ullamcorper vitae sollicitudin
-            pellentesque. Ullamcorper sit sed gravida urna pellentesque. Eget quis facilisi viverra elementum ultricies
-            sed. Etiam aliquam rhoncus sit orci, feugiat.
-            Turpis non sed ac turpis etiam. Diam semper sollicitudin vestibulum at magna volutpat. Vivamus eros enim
-            curabitur odio morbi.
-            <br><br>
-            At lectus adipiscing sollicitudin aliquet urna. Feugiat dictum lacus, ut nisl lorem. Convallis et habitasse
-            vitae vitae eget sit. Vulputate semper pretium magna sed nisl. Non tristique viverra aliquam eu, vulputate
-            id. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus ullamcorper vitae sollicitudin
-            pellentesque. Ullamcorper sit sed gravida urna pellentesque. Eget quis facilisi viverra elementum ultricies
-            sed. Etiam aliquam rhoncus sit orci, feugiat.
-            Turpis non sed ac turpis etiam. Diam semper sollicitudin vestibulum at magna volutpat. Vivamus eros enim
-            curabitur odio morbi.
-            <br><br>
-            At lectus adipiscing sollicitudin aliquet urna. Feugiat dictum lacus, ut nisl lorem. Convallis et habitasse
-            vitae vitae eget sit. Vulputate semper pretium magna sed nisl. Non tristique viverra aliquam eu, vulputate
-            id.
         </div>
     </div>
 </section>
 
 <section class="page-end">
-    <div class="container pageEndText-container">
+    <div class="pageEndText-container">
         <a href="https://linkedin.com/in/yooha-bae-1912b21a3/" target="_blank" class="navText pageEndText">LINKEDIN</a>
         <a href="https://github.com/YoohaBae" target="_blank" class="navText pageEndText">GITHUB</a>
         <a href="mailto: yooha.bae.2@gmail.com" target="_blank" class="navText pageEndText">EMAIL</a>
@@ -82,7 +63,52 @@
     </div>
 </section>
 
-<div class="mobile">
-    Mobile access is not currently available. Please use the PC to access.
-</div>
+<script>
+    $.getJSON("/database/blogs.json", function (data) {
+        const id = '<%= blogId %>';
+        let blogData = data[id];
+
+        let subtitle = document.getElementsByClassName('subtitle')[0];
+        subtitle.innerText = blogData['subtitle'];
+
+        let title = document.getElementsByClassName('title')[0];
+        title.innerText = blogData['title'];
+
+        let hashtag = document.getElementsByClassName('hashtag')[0];
+        hashtag.innerText = blogData['hashtag'];
+
+        let blogContent = document.getElementsByClassName('blog-content')[0];
+        blogContent.innerHTML = blogData['content'];
+
+        let category_container = document.getElementsByClassName('category-container')[0];
+        let category = document.createElement('span');
+        category.classList.add('category');
+        if(blogData['category']==='design') {
+            category.classList.add('design-category');
+            category.innerText = "design";
+            category_container.append(category);
+        }
+        else if(blogData['category']==='coding') {
+            category.classList.add('coding-category');
+            category.innerText = "coding";
+            category_container.append(category);
+        }
+        else if(blogData['category']==='leadership') {
+            category.classList.add('leadership-category');
+            category.innerText = "leadership";
+            category_container.append(category);
+        }
+        else if(blogData['category']==='experience') {
+            category.classList.add('experience-category');
+            category.innerText = "experience";
+            category_container.append(category);
+        }
+        else if(blogData['category']==='other') {
+            category.classList.add('other-category');
+            category.innerText = "other";
+            category_container.append(category);
+        }
+
+    })
+</script>
 </html>

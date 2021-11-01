@@ -111,23 +111,25 @@
         const queryFilter = '<%= filter %>';
         window.currentFilter = 'all-filter-text';
         let filter = null;
-        if(queryFilter === "designer") {
+        if (queryFilter === "designer") {
             filter = "design-filter-text";
             create_filter_page(filter);
-        }
-        else if (queryFilter === "developer") {
+        } else if (queryFilter === "developer") {
             filter = "coding-filter-text";
             create_filter_page(filter);
-        }
-
-        else if (queryFilter === "leader") {
+        } else if (queryFilter === "leader") {
             filter = "leadership-filter-text";
             create_filter_page(filter);
-        }
-        else {
+        } else {
             create_page(filter);
         }
         $('.paginationNum').click(changePage(0));
+    });
+
+    $(document).on('click', '.post', function () {
+        // your function here
+        let blogid = this.getAttribute('blogid');
+        window.location.href = '/blog/' + blogid;
     });
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -141,13 +143,12 @@
 
     function create_filter_page(filter) {
         $.getJSON("database/blogs.json", function (data) {
-            data.sort(custom_sort);
             window.data = data;
             window.fullPage = math.ceil(data.length / 6);
             var recentPosts = data.slice(0, 3);
-            recentPosts.forEach(function (element) {
+            recentPosts.forEach(function (element, index) {
                 $('.recent-posts').append(
-                    "<div class='post " + element.className + " '>" +
+                    "<div blogid=" + index + " class='post " + element.className + ' post' + index + " '>" +
                     "<div class='card-header'></div>" +
                     "<div class='postInfo'>" +
                     "<span class='category " + element.category + "-category'>" + element.category + "</span>" +
@@ -166,11 +167,9 @@
             let div = document.getElementsByClassName('all-pages')[0];
             div.innerHTML = "";
 
-
             let count = 0;
 
-
-            data.forEach(function (element) {
+            data.forEach(function (element, index) {
                 if (window.currentFilter.split('-')[0] !== "all") {
                     if (element.category !== window.currentFilter.split('-')[0]) {
                         console.log(element.category);
@@ -185,7 +184,7 @@
                     $('.page' + (count / 6 >> 0)).append("<div class='row" + (count / 3 >> 0) + " row'></div>");
                 }
                 $('.row' + (count / 3 >> 0)).append(
-                    "<div class='post " + element.className + " '>" +
+                    "<div blogid=" + index + " class='post " + element.className + ' post' + index + " '>" +
                     "<div class='card-header'></div>" +
                     "<div class='postInfo'>" +
                     "<span class='category " + element.category + "-category'>" + element.category + "</span>" +
@@ -223,13 +222,12 @@
 
     function create_page() {
         $.getJSON("database/blogs.json", function (data) {
-            data.sort(custom_sort);
             window.data = data;
             window.fullPage = math.ceil(data.length / 6);
             var recentPosts = data.slice(0, 3);
-            recentPosts.forEach(function (element) {
+            recentPosts.forEach(function (element, index) {
                 $('.recent-posts').append(
-                    "<div class='post " + element.className + " '>" +
+                    "<div blogid=" + index + " class='post " + element.className + ' post' + index + " '>" +
                     "<div class='card-header'></div>" +
                     "<div class='postInfo'>" +
                     "<span class='category " + element.category + "-category'>" + element.category + "</span>" +
@@ -247,7 +245,7 @@
                     $('.page' + (index / 6 >> 0)).append("<div class='row" + (index / 3 >> 0) + " row'></div>");
                 }
                 $('.row' + (index / 3 >> 0)).append(
-                    "<div class='post " + element.className + " '>" +
+                    "<div blogid=" + index + " class='post " + element.className + ' post' + index + " '>" +
                     "<div class='card-header'></div>" +
                     "<div class='postInfo'>" +
                     "<span class='category " + element.category + "-category'>" + element.category + "</span>" +
@@ -284,7 +282,7 @@
 
 
         let count = 0;
-        window.data.forEach(function (element) {
+        window.data.forEach(function (element, index) {
             if (window.currentFilter.split('-')[0] !== "all") {
                 if (element.category !== window.currentFilter.split('-')[0]) {
                     console.log(element.category);
@@ -299,7 +297,7 @@
                 $('.page' + (count / 6 >> 0)).append("<div class='row" + (count / 3 >> 0) + " row'></div>");
             }
             $('.row' + (count / 3 >> 0)).append(
-                "<div class='post " + element.className + " '>" +
+                "<div blogid=" + index + " class='post " + element.className + ' post' + index + " '>" +
                 "<div class='card-header'></div>" +
                 "<div class='postInfo'>" +
                 "<span class='category " + element.category + "-category'>" + element.category + "</span>" +

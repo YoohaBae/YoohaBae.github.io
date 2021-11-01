@@ -3,7 +3,9 @@ var path = require('path');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('blog', { title: 'Blog' });
+router.get('/:id', function(req, res, next) {
+    res.render('blog', { title: 'Blog', blogId: req.params.id});
 });
+
+
 module.exports = router;

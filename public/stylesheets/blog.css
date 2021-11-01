@@ -68,3 +68,23 @@ html {
     background-color: #5A4A3F;
 }
 
+.blog-container {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.title {
+    font-size: 3vw;
+}
+
+.subtitle {
+    font-size: 1.5vw;
+}
+
+.category {
+    font-size: 1vw
+}
+
+.hashtag {
+    font-size: 1vw;
+}
