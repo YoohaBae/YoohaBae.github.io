@@ -49,7 +49,37 @@
         </div>
         <div class="hashtag">
         </div>
+        <div class="image-slider">
+            <!-- Wrapper -->
+            <div class="wrapper">
+                <!-- Images Area -->
+                <div class="images-area">
+                    <img src="https://source.unsplash.com/1" alt="image" class="firstImage">
+                    <img src="https://source.unsplash.com/2" alt="image">
+                    <img src="https://source.unsplash.com/3" alt="image">
+                    <img src="https://source.unsplash.com/4" alt="image">
+                    <img src="https://source.unsplash.com/5" alt="image">
+                </div>
+                <!-- Buttons Area -->
+                <div class="buttons-area">
+                    <div class="previous-btn">
+                        <i class='bx bx-chevron-left'></i>
+                    </div>
+                    <div class="next-btn">
+                        <i class='bx bx-chevron-right'></i>
+                    </div>
+                </div>
+                <!-- Pagination Area -->
+                <div class="pagination-area">
+                </div>
+            </div>
+            <!-- End Wrapper -->
+        </div>
         <div class="blog-content body1">
+        </div>
+        <div class="github-link body1 blog-content">
+            <h4>Project Links</h4>
+            &emsp;Github:
         </div>
     </div>
 </section>
@@ -68,6 +98,9 @@
         const id = '<%= blogId %>';
         let blogData = data[id];
 
+        let blogImage = document.getElementsByClassName('blog-image')[0];
+        blogImage.style.backgroundImage = "url('https://source.unsplash.com/random')";
+
         let subtitle = document.getElementsByClassName('subtitle')[0];
         subtitle.innerText = blogData['subtitle'];
 
@@ -83,31 +116,159 @@
         let category_container = document.getElementsByClassName('category-container')[0];
         let category = document.createElement('span');
         category.classList.add('category');
-        if(blogData['category']==='design') {
+        if (blogData['category'] === 'design') {
             category.classList.add('design-category');
             category.innerText = "design";
             category_container.append(category);
-        }
-        else if(blogData['category']==='coding') {
+        } else if (blogData['category'] === 'coding') {
             category.classList.add('coding-category');
             category.innerText = "coding";
             category_container.append(category);
-        }
-        else if(blogData['category']==='leadership') {
+        } else if (blogData['category'] === 'leadership') {
             category.classList.add('leadership-category');
             category.innerText = "leadership";
             category_container.append(category);
-        }
-        else if(blogData['category']==='experience') {
+        } else if (blogData['category'] === 'experience') {
             category.classList.add('experience-category');
             category.innerText = "experience";
             category_container.append(category);
-        }
-        else if(blogData['category']==='other') {
+        } else if (blogData['category'] === 'other') {
             category.classList.add('other-category');
             category.innerText = "other";
             category_container.append(category);
         }
+
+
+        // Images Area Images
+        let imagesAreaImages = document.querySelectorAll('.images-area img');
+// Images Area First Image
+        let imagesAreaFirstImage = document.querySelector('.images-area .firstImage');
+
+// Previous And Next Buttons
+        let previousBtn = document.querySelector('.previous-btn');
+        let nextBtn = document.querySelector('.next-btn');
+
+// Pagination Area
+        let paginationArea = document.querySelector('.pagination-area');
+
+// Current Image Count
+        let currentImageCount = 1;
+
+// Slider Controler Function
+        let sliderController;
+// Create Pagination Spans Function
+        let createPaginationSpans;
+
+// Every Click On Buttons
+        previousBtn.addEventListener('click', previousImage);
+        nextBtn.addEventListener('click', nextImage);
+
+
+// Previous Image Function
+        function previousImage() {
+            // If The currentImageCount Is 1
+            if (currentImageCount === 1) {
+                return false;
+            } else { // Else
+                // Minus One From currentImageCount
+                currentImageCount--;
+                // Call Function sliderController();
+                sliderController();
+
+            }
+            ;
+        };
+
+// Next Image Function
+        function nextImage() {
+            // If The currentImageCount Is imagesAreaImages.length
+            if (currentImageCount === imagesAreaImages.length) {
+                return false;
+            } else { // Else
+                // Plus One To currentImageCount
+                currentImageCount++;
+                // Call Function sliderController();
+                sliderController();
+            }
+            ;
+        };
+
+// Create Pagination Spans [Circls] Function
+        (function createPaginationSpans() {
+            // Loop On All The Images Slider
+            for (var i = 0; i < imagesAreaImages.length; i++) {
+                // Create Span
+                let paginationSpan = document.createElement('span');
+                // Append The Span
+                paginationArea.appendChild(paginationSpan)
+            }
+            ;
+        })();
+
+// Slider Controler Function
+        (sliderController = function () {
+            // Get All The pagination Spans
+            let paginationCircls = document.querySelectorAll('.pagination-area span');
+
+            // Call Remore All Active Class Function
+            removeAllActive(paginationCircls);
+
+            // Call Remore Active Button Function
+            activeButton();
+
+            // The currentImageCount Minus One
+            let currentImageMinusOne = currentImageCount - 1;
+
+            // Set Active Class On Current Pagination
+            paginationCircls[currentImageMinusOne].classList.add('active');
+
+            // Move The images Area First Image
+            imagesAreaFirstImage.style.marginLeft = `-${80 * currentImageMinusOne}vw`;
+        })();
+
+// Remove All Active Class Function
+        function removeAllActive(targetElement) {
+            for (var i = 0; i < targetElement.length; i++) {
+                targetElement[i].classList.remove('active');
+            }
+            ;
+        };
+
+// Check Active Button Function
+        function activeButton() {
+            // If The Current Image Count Equle 1
+            currentImageCount === 1 ?
+                // Hide The Previous Button
+                previousBtn.classList.add('disabled') :
+                // Else: Show The Previous Button
+                previousBtn.classList.remove('disabled');
+
+            // If The Current Image Count Equle imagesAreaImages.length
+            currentImageCount === imagesAreaImages.length ?
+                // Hide The Next Button
+                nextBtn.classList.add('disabled') :
+                // Else: Show The Next Button
+                nextBtn.classList.remove('disabled');
+        };
+
+// Move Slider Image Every 3 Second
+        setInterval(() => {
+            // If The Current Image Count Not Equle imagesAreaImages.length
+            if (currentImageCount != imagesAreaImages.length) {
+                // Plus One
+                currentImageCount++;
+                // Call Function sliderController();
+                sliderController();
+            } else { // else
+                // Make currentImageCount Equle 1
+                currentImageCount = 1;
+                // Call Function sliderController();
+                sliderController();
+            }
+            ;
+        }, 3000);
+
+// :)
 
     })
 </script>

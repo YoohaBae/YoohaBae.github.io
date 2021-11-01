@@ -7,12 +7,17 @@
     "timeline": "2020.03~2020.06",
     "technique": "figma, UI/UX, HCI",
     "task": "Designing the interfaces of the mobile website, Interviewing potential users",
-    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus ullamcorper vitae sollicitudin pellentesque. Ullamcorper sit sed gravida urna pellentesque. Eget quis facilisi viverra elementum ultricies sed. Etiam aliquam rhoncus sit orci, feugiat.\nTurpis non sed ac turpis etiam. Diam semper sollicitudin vestibulum at magna volutpat. Vivamus eros enim curabitur odio morbi. \n\nAt lectus adipiscing sollicitudin aliquet urna. Feugiat dictum lacus, ut nisl lorem. Convallis et habitasse vitae vitae eget sit. Vulputate semper pretium magna sed nisl. Non tristique viverra aliquam eu, vulputate id.",
+    "content": "            <h4>1. Project Summary</h4>\n            &emsp;During Human-Computer Interaction class, our team designed a website that\n            allows seniors to learn about how to use functions of famous applications. Users can choose which\n            applications they want to learn and they can see very detailed instructions. The instructions will include\n            screenshot and diagrams to help users to keep track on, and there will be a pop-up dictionary section incase\n            of users having trouble with understanding some vocabularies. This website is unique because of its\n            accessibility. It only requires users to connect on the internet and open a web browser. It is also unique\n            because it deals with applications that <b>Korean seniors</b> use frequently and have difficulty using.\n            <h4>2. Planning and Interviews</h4>\n            &emsp;Interviews with four elderly were conducted to set the planning direction of the website. Also,\n            through the interview with the club representative who provided application learning classes for the\n            elderly, we were able to decide how to represent the application functions so that it would be easy to\n            understand and approach.\n            <br>&emsp;Link: <a href=\"/resources/pdf/planning.pdf\">planning.pdf</a>\n            <h4>2. Sketches and Storyboard</h4>\n            &emsp;We created a brief sketch of our website's UI/UX and a storyboard for when using this website.\n            <br>&emsp;Link: <a href=\"/resources/pdf/sketches_and_storyboard.pdf\">Sketches and Storyboard.pdf</a>\n            <h4>4. Paper prototyping</h4>\n            &emsp;Through paper prototyping we were able to specify our website and by receiving interactive feedback by\n            10 people, we went through the process of redesigning our website.\n            <h4>5. Figma prototyping</h4>\n            &emsp;Based on the design of the paper prototype by using Figma, we designed ou website. Based on this\n            prototype we received our second interactive feedback.\n            <br>&emsp;Link: <a href=\"/resources/pdf/figma_prototyping.pdf\">figma_prototyping.pdf</a>\n            <h4>6. Website Development</h4>\n            &emsp;We created the mobile website based on our revised designs and we were able to receive a positive\n            review from our professor.\n            <br>&emsp;Link: <a href=\"/resources/pdf/final_report.pdf\">final_report.pdf</a>\n",
     "github": "",
     "background": "",
-    "img": "",
-    "uploadTime" : "2019-02-01",
-    "className" : "DoUm"
+    "img": [
+      "",
+      "",
+      "",
+      ""
+    ],
+    "uploadTime": "2019-02-01",
+    "className": "DoUm"
   },
   {
     "title": "Clean Bottle",
@@ -26,8 +31,8 @@
     "github": "https://github.com/YoohaBae/CleanBottle",
     "background": "",
     "img": "",
-    "uploadTime" : "2016-04-12",
-    "className" : "CleanBottle"
+    "uploadTime": "2016-04-12",
+    "className": "CleanBottle"
   },
   {
     "title": "USC Website",
@@ -41,8 +46,8 @@
     "github": "",
     "background": "",
     "img": "",
-    "uploadTime" : "2017-02-01",
-    "className" : "USC"
+    "uploadTime": "2017-02-01",
+    "className": "USC"
   },
   {
     "title": "DoUm",
@@ -56,8 +61,8 @@
     "github": "",
     "background": "",
     "img": "",
-    "uploadTime" : "2019-02-01",
-    "className" : "DoUm"
+    "uploadTime": "2019-02-01",
+    "className": "DoUm"
   },
   {
     "title": "Clean Bottle",
@@ -71,8 +76,8 @@
     "github": "https://github.com/YoohaBae/CleanBottle",
     "background": "",
     "img": "",
-    "uploadTime" : "2016-04-12",
-    "className" : "CleanBottle"
+    "uploadTime": "2016-04-12",
+    "className": "CleanBottle"
   },
   {
     "title": "USC Website",
@@ -86,8 +91,8 @@
     "github": "",
     "background": "",
     "img": "",
-    "uploadTime" : "2017-02-01",
-    "className" : "USC"
+    "uploadTime": "2017-02-01",
+    "className": "USC"
   },
   {
     "title": "USC Website",
@@ -101,8 +106,8 @@
     "github": "",
     "background": "",
     "img": "",
-    "uploadTime" : "2017-02-01",
-    "className" : "USC"
+    "uploadTime": "2017-02-01",
+    "className": "USC"
   },
   {
     "title": "USC Website",
@@ -116,8 +121,8 @@
     "github": "",
     "background": "",
     "img": "",
-    "uploadTime" : "2017-02-01",
-    "className" : "USC"
+    "uploadTime": "2017-02-01",
+    "className": "USC"
   },
   {
     "title": "USC Website",
@@ -131,8 +136,8 @@
     "github": "",
     "background": "",
     "img": "",
-    "uploadTime" : "2017-02-01",
-    "className" : "USC"
+    "uploadTime": "2017-02-01",
+    "className": "USC"
   },
   {
     "title": "USC Website",
@@ -146,8 +151,8 @@
     "github": "",
     "background": "",
     "img": "",
-    "uploadTime" : "2017-02-01",
-    "className" : "USC"
+    "uploadTime": "2017-02-01",
+    "className": "USC"
   },
   {
     "title": "USC Website",
@@ -161,8 +166,8 @@
     "github": "",
     "background": "",
     "img": "",
-    "uploadTime" : "2017-02-01",
-    "className" : "USC"
+    "uploadTime": "2017-02-01",
+    "className": "USC"
   },
   {
     "title": "USC Website",
@@ -176,7 +181,7 @@
     "github": "",
     "background": "",
     "img": "",
-    "uploadTime" : "2017-02-01",
-    "className" : "USC"
+    "uploadTime": "2017-02-01",
+    "className": "USC"
   }
 ]
